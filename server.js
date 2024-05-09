@@ -16,6 +16,9 @@ app.post('/update', (req, res) => {
 app.get('/distance', (req, res) => {
     res.json({ distance: distance });
 });
+app.get('/', (req, res) => {
+    res.send('Test test hopefully it works');
+});
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
