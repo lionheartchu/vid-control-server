@@ -1,6 +1,13 @@
 const express = require('express');
 const app = express();
 
+const cors = require('cors');
+// 允许所有跨域请求
+app.use(cors({
+    origin: '*',  // 允许所有域访问，或者指定您的前端域如 https://yourfrontend.com
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],  // 根据需要允许的方法
+    allowedHeaders: 'Content-Type'  // 允许的头部
+}));
 app.use(express.json());  // 使服务器能够解析 JSON 格式的请求体
 
 let distance = 0;  // 用于存储距离数据
